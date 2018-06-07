@@ -27,14 +27,14 @@ message.channel.send(embed)
 })
 } else {
 	message.guild.fetchInvites().then(invites => {
-	const invite = invites.find(inviter => inviter.inviter.id === member.user.id);
+	const invite2 = invites.find(inviter => inviter.inviter.id === member.user.id);
 		
 const k2 = new Discord.RichEmbed()
 .setAuthor("Invited | VermillionFamily", message.guild.iconURL)
 .setDescription(member.user.username + " nu a invitat niciun utilizator pe server.")
 .setTimestamp()
 .setFooter(member.user.username)		
-if(!invite.maxUses) return message.channel.send(k2)
+if(!invite2.maxUses) return message.channel.send(k2)
 		
 const embed2 = new Discord.RichEmbed()
 .setAuthor("Invited | VermillionFamily", message.guild.iconURL)
