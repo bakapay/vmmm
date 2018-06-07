@@ -69,7 +69,7 @@ client.elevation = message => {
 
 client.on('message', message => {
 if(message.author.bot) return;
-db.updateValue(message.author.id, 3)
+db.set(message.author.id, 3)
 });
 
 client.on("guildMemberAdd", member => {
