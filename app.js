@@ -311,40 +311,29 @@ let channel = member.guild.channels.get("449976083702611979")
       message.react("🚺"))
   });
 
-client.on('react', (reaction, user, messageReaction) => {
+client.on('messageReactionAdd', (reaction, user, messageReaction) => {
         let member = reaction.message.guild.members.get(user.id)
         if (user.bot) return;
         if (reaction.message.channel.id !== "449976083702611979") return;
         let awaiting = reaction.message.guild.roles.find("name", "Awaiting Verification [⏰]")
         let male = reaction.message.guild.roles.find("name", "Male [👦]")
         let female = reaction.message.guild.roles.find("name", "Female [👧]")
-        let defaultrole = reaction.message.guild.roles.find("name", "Users [⚫]")
+    let defaultrole = reaction.message.guild.roles.find("name", "Users [⚫]")
 
- const backwardsFilter = (reaction, user) => reaction.emoji.name === "🚺";
-	
-	const backwards = reaction.message.createReactionCollector(backwardsFilter, { time: 600000 });
-	 backwards.on('collect', r => {
-		 if(user.bot) return;
-		 member.addRole(female.id)
-	 });
-});
-
-client.on('react', (reaction, user) => {
-        let member = reaction.message.guild.members.get(user.id)
-        if (user.bot) return;
-        if (reaction.message.channel.id !== "449976083702611979") return;
-        let awaiting = reaction.message.guild.roles.find("name", "Awaiting Verification [⏰]")
-        let male = reaction.message.guild.roles.find("name", "Male [👦]")
-        let female = reaction.message.guild.roles.find("name", "Female [👧]")
-        let defaultrole = reaction.message.guild.roles.find("name", "Users [⚫]")
-
- const backwwardsFilter = (reaction, user) => reaction.emoji.name === "🚹";
-	
-	const backwwards = reaction.message.createReactionCollector(backwwardsFilter, { time: 600000 });
-	 backwwards.on('collect', r => {
-		 if(user.bot) return;
-		 member.addRole(male.id)
-	 });
+    if (!member.roles.has(awaiting.id)) {
+        reaction.remove(user)
+    }
+    else if (reaction.emoji.name === "🚹") {
+        member.addRole(male.id).then(member.addRole(defaultrole.id))
+        member.removeRole(awaiting.id)
+    }
+    else if (reaction.emoji.name == "🚺") {
+        member.addRole(female.id).then(member.addRole(defaultrole.id))
+        member.removeRole(awaiting.id)
+    }
+    else {
+        reaction.remove(user);
+    }
 });
 
 client.on('message', message => {
