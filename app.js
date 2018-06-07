@@ -69,7 +69,7 @@ client.elevation = message => {
 
 client.on('message', message => {
 if(message.author.bot) return;
-db.set(message.author.id, 3)
+db.updateValue(message.author.id, 3)
 });
 
 client.on("guildMemberAdd", member => {
@@ -373,10 +373,10 @@ client.on('messageReactionAdd', (reaction, user) => {
 
 if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
 
-db.fetch(user.id).then(i => {
+db.fetchObject(user.id).then(i => {
 if(i.value === "150000" || i.value > "150000"){
 member.addRole(dmdo.id).then(member.addRole(dns.id))
-db.set(user.id, -150000)
+db.updateValue(user.id, -150000)
 reaction.message.edit('**VM** ➤ Ai primit gradul de `DIAMOND DONOR` și ți-au fost retrase 150000 points.')
 }
 if(i.value < "150000"){
@@ -401,10 +401,10 @@ client.on('messageReactionAdd', (reaction, user) => {
 
 if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
 
-db.fetch(user.id).then(i => {
+db.fetchObject(user.id).then(i => {
 if(i.value === "100000" || i.value > "100000"){
 member.addRole(dmdo.id).then(member.addRole(dns.id))
-db.set(user.id, -100000)
+db.updateValue(user.id, -100000)
 reaction.message.edit('**VM** ➤ Ai primit gradul de `PLATINUM DONOR` și ți-au fost retrase 100000 points.')
 }
 if(i.value < "100000"){
@@ -429,9 +429,9 @@ client.on('messageReactionAdd', (reaction, user) => {
 
 if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
 
-db.fetch(user.id).then(i => {
+db.fetchObject(user.id).then(i => {
 if(i.value === "75000" || i.value > "75000"){
-db.set(user.id, -75000)
+db.updateValue(user.id, -75000)
 member.addRole(dmdo.id).then(member.addRole(dns.id))
 reaction.message.edit('**VM** ➤ Ai primit gradul de `GOLD DONOR` și ți-au fost retrase 75000 points.')
 }
@@ -457,9 +457,9 @@ client.on('messageReactionAdd', (reaction, user) => {
 
 if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
 
-db.fetch(user.id).then(i => {
+db.fetchObject(user.id).then(i => {
 if(i.value === "35000" || i.value > "35000"){
-db.set(user.id, -35000)
+db.updateValue(user.id, -35000)
 member.addRole(dmdo.id).then(member.addRole(dns.id))
 reaction.message.edit('**VM** ➤ Ai primit gradul de `BRONZE DONOR` și ți-au fost retrase 35000 points.')
 }
