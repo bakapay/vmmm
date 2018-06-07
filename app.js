@@ -73,22 +73,22 @@ db.set(message.author.id, 3)
 });
 
 client.on("guildMemberAdd", member => {
-  member.guild.channels.get("447386660175609857").setName("👦 Total Members: " + member.guild.members.filter(m => !m.user.bot).size)
+  member.guild.channels.get("447386660175609857").setName("рџ‘¦ Total Members: " + member.guild.members.filter(m => !m.user.bot).size)
   });
   
 client.on("guildMemberRemove", member => {
-  member.guild.channels.get("447386660175609857").setName("👦 Total Members: " + member.guild.members.filter(m => !m.user.bot).size)
+  member.guild.channels.get("447386660175609857").setName("рџ‘¦ Total Members: " + member.guild.members.filter(m => !m.user.bot).size)
 });
 
 client.on("ready", member => {
   let guild = client.guilds.get("447342629198495744")
-  guild.channels.get("447386660175609857").setName("👦 Total Members: " + guild.members.filter(m => !m.user.bot).size)
+  guild.channels.get("447386660175609857").setName("рџ‘¦ Total Members: " + guild.members.filter(m => !m.user.bot).size)
 });
 
 client.on(`channelDelete`, channel => {
   const embed = new Discord.RichEmbed()
-  .setAuthor("Arhivă | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
-  .setDescription("**VM** ➤ Channel-ul `" + channel.name + "` a fost șters.") 
+  .setAuthor("ArhivДѓ | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
+  .setDescription("**VM** вћ¤ Channel-ul `" + channel.name + "` a fost И™ters.") 
   .setFooter("ID: " + channel.id)
   .setTimestamp()
 
@@ -98,8 +98,8 @@ client.on(`channelDelete`, channel => {
 client.on(`channelCreate`, channel => {
 if(!channel.name) return;
   const embed = new Discord.RichEmbed()
-  .setAuthor("Arhivă | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
-  .setDescription("**VM** ➤ Channel-ul `" + channel.name + "` a fost creat.") 
+  .setAuthor("ArhivДѓ | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
+  .setDescription("**VM** вћ¤ Channel-ul `" + channel.name + "` a fost creat.") 
   .setFooter("ID: " + channel.id)
   .setTimestamp()
 
@@ -108,8 +108,8 @@ if(!channel.name) return;
 });
 client.on(`roleDelete`, role => {
   const embed = new Discord.RichEmbed()
-  .setAuthor("Arhivă | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
-  .setDescription("**VM** ➤ Role-ul `" + role.name + "` a fost șters.") 
+  .setAuthor("ArhivДѓ | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
+  .setDescription("**VM** вћ¤ Role-ul `" + role.name + "` a fost И™ters.") 
   .setFooter("ID: " + role.id)
   .setTimestamp()
 
@@ -118,8 +118,8 @@ client.on(`roleDelete`, role => {
 
 client.on(`roleCreate`, role => {
   const embed = new Discord.RichEmbed()
-  .setAuthor("Arhivă | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
-  .setDescription("**VM** ➤ Role-ul `" + role.name + "` a fost creat.") 
+  .setAuthor("ArhivДѓ | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
+  .setDescription("**VM** вћ¤ Role-ul `" + role.name + "` a fost creat.") 
   .setFooter("ID: " + role.id)
   .setTimestamp()
 
@@ -127,12 +127,12 @@ client.on(`roleCreate`, role => {
 });
 
 client.on(`guildMemberAdd`, (member) => {
-let defaultrole = member.guild.roles.find("name", "Awaiting Verification [⏰]")
+let defaultrole = member.guild.roles.find("name", "Awaiting Verification [вЏ°]")
 let saferole = member.guild.roles.find("name", "safe-role")
-let users = member.guild.roles.find("name", "Users [⚫]")
+let users = member.guild.roles.find("name", "Users [вљ«]")
   const embed = new Discord.RichEmbed()
-  .setAuthor("Arhivă | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
-  .setDescription("**VM** ➤ Utilizatorul `" + member.user.username + "` s-a alăturat serverului.") 
+  .setAuthor("ArhivДѓ | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
+  .setDescription("**VM** вћ¤ Utilizatorul `" + member.user.username + "` s-a alДѓturat serverului.") 
   .setFooter("ID: " + member.id)
   .setTimestamp()
 
@@ -151,8 +151,8 @@ member.guild.members.get(member.id).addRole(saferole.id)).then(
 
 client.on(`guildMemberRemove`, (member) => {
   const embed = new Discord.RichEmbed()
-  .setAuthor("Arhivă | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
-  .setDescription("**VM** ➤ Utilizatorul `" + member.user.username + "` a părăsit serverul.") 
+  .setAuthor("ArhivДѓ | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
+  .setDescription("**VM** вћ¤ Utilizatorul `" + member.user.username + "` a pДѓrДѓsit serverul.") 
   .setFooter("ID: " + member.id)
   .setTimestamp()
 
@@ -161,8 +161,8 @@ client.on(`guildMemberRemove`, (member) => {
 
 client.on(`guildBanAdd`, (guild, user) => {
    const embed = new Discord.RichEmbed()
-  .setAuthor("Arhivă | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
-  .setDescription("**VM** ➤ Utilizatorul `" + user.username + "` a fost banat.") 
+  .setAuthor("ArhivДѓ | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
+  .setDescription("**VM** вћ¤ Utilizatorul `" + user.username + "` a fost banat.") 
   .setFooter("ID: " + user.id)
   .setTimestamp() 
 
@@ -171,8 +171,8 @@ client.on(`guildBanAdd`, (guild, user) => {
 
 client.on(`guildBanRemove`, (guild, user) => {
    const embed = new Discord.RichEmbed()
-  .setAuthor("Arhivă | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
-  .setDescription("**VM** ➤ Utilizatorul `" + user.username + "` a primit unban.") 
+  .setAuthor("ArhivДѓ | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
+  .setDescription("**VM** вћ¤ Utilizatorul `" + user.username + "` a primit unban.") 
   .setFooter("ID: " + user.id)
   .setTimestamp() 
 
@@ -183,8 +183,8 @@ client.on(`guildBanRemove`, (guild, user) => {
 client.on(`messageDelete`, (message) => {
   if(message.author.bot) return;
    const embed = new Discord.RichEmbed()
-  .setAuthor("Arhivă | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
-  .setDescription("**VM** ➤ Mesajul " + message.content + " trimis de către `" + message.author.username + "` a fost șters.")
+  .setAuthor("ArhivДѓ | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
+  .setDescription("**VM** вћ¤ Mesajul " + message.content + " trimis de cДѓtre `" + message.author.username + "` a fost И™ters.")
   .setFooter("ID: " + message.id)
   .setTimestamp() 
 
@@ -193,9 +193,9 @@ client.on(`messageDelete`, (message) => {
 
 client.on(`message`, message => {
   const embed = new Discord.RichEmbed()
-  .setAuthor("Aplicații staff | VermillionFamily", "https://media.discordapp.net/attachments/449208514762768384/452867773492756500/vm.png")
+  .setAuthor("AplicaИ›ii staff | VermillionFamily", "https://media.discordapp.net/attachments/449208514762768384/452867773492756500/vm.png")
   .setDescription(message.content)
-  .setFooter("Autorul aplicației - " + message.author.username)
+  .setFooter("Autorul aplicaИ›iei - " + message.author.username)
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
 
@@ -208,19 +208,19 @@ if (!applysData[server]) applysData[server] = {}
 if (!applysData[server].number) applysData[server].number = 1;
 if(message.channel.id != "447409982158405644") return;
   if(message.channel.id === "447409982158405644"){
-if(message.content.startsWith("1. Numele tău(real):")){
+if(message.content.startsWith("1. Numele tДѓu(real):")){
     if(message.author.id === "447385216898695179" || message.author.id === "448183964482535436") return;
      message.delete()
 let role = message.guild.roles.find("name", "@everyone");
-    message.guild.createChannel(`📫-rank-applys-${applysData[server].number}`).then(
+    message.guild.createChannel(`рџ“«-rank-applys-${applysData[server].number}`).then(
       tc => tc.setParent("453138559872925705")).then(
       tc => tc.setPosition(1)).then(
         setTimeout(() => {
-      message.guild.channels.find(`name`, `📫-rank-applys-${applysData[server].number}`).send(embed)
+      message.guild.channels.find(`name`, `рџ“«-rank-applys-${applysData[server].number}`).send(embed)
         }, 2000))
     }
 }
-      if(message.channel.name === `📫-rank-applys-${applysData[server].number}`){
+      if(message.channel.name === `рџ“«-rank-applys-${applysData[server].number}`){
       message.channel.overwritePermissions(role, {
       READ_MESSAGES: false
       })
@@ -239,7 +239,7 @@ let role = message.guild.roles.find("name", "@everyone");
 
 client.on("message", message => {
 let role = message.guild.roles.find("name", "@everyone");
-       if(message.channel.name.startsWith(`📫-rank-applys-`)){
+       if(message.channel.name.startsWith(`рџ“«-rank-applys-`)){
         if(message.author.id === "447385216898695179"){
       message.channel.overwritePermissions(role, {
       READ_MESSAGES: false
@@ -258,8 +258,8 @@ let applysData = JSON.parse(fs.readFileSync('storage/cereri.json', 'utf8'));
 if (!applysData[server]) applysData[server] = {}
 if (!applysData[server].number) applysData[server].number = 1;
 
-if(channel.name != `📫-rank-applys-${applysData[server].number}`) return;
-if(channel.name === `📫-rank-applys-${applysData[server].number}`){
+if(channel.name != `рџ“«-rank-applys-${applysData[server].number}`) return;
+if(channel.name === `рџ“«-rank-applys-${applysData[server].number}`){
     applysData[server].number += 1;
 }
   fs.writeFile('storage/cereri.json', JSON.stringify(applysData), (err) => {
@@ -288,16 +288,16 @@ if(channel.parent.id === `453138559872925705`){
 
 client.on(`message`, message => {
   const embed = new Discord.RichEmbed()
-  .setAuthor("Reclamații | VermillionFamily", client.guilds.get("447342629198495744").iconURL)
+  .setAuthor("ReclamaИ›ii | VermillionFamily", client.guilds.get("447342629198495744").iconURL)
   .setDescription(message.content)
-  .setFooter("Autorul reclamației - " + message.author.username)
+  .setFooter("Autorul reclamaИ›iei - " + message.author.username)
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
 
   if(message.channel.id === "449899647893504011"){
-    if(!message.content.startsWith("1. Numele tău:")) return;
+    if(!message.content.startsWith("1. Numele tДѓu:")) return;
 
-    if(message.content.startsWith("1. Numele tău:")){
+    if(message.content.startsWith("1. Numele tДѓu:")){
       message.guild.channels.get("449899909152243712").send(embed)
       message.delete()
     }
@@ -306,21 +306,21 @@ client.on(`message`, message => {
 client.on("guildMemberAdd", member => {
 let channel = member.guild.channels.get("449976083702611979")
     channel.fetchMessage("452897011839008771").then(message =>
-      message.react("🚹"))
+      message.react("рџљ№"))
         channel.fetchMessage("452897011839008771").then(message =>
-      message.react("🚺"))
+      message.react("рџљє"))
   });
 
 client.on('messageReactionAdd', (reaction, user, messageReaction) => {
         let member = reaction.message.guild.members.get(user.id)
         if (user.bot) return;
         if (reaction.message.channel.id !== "449976083702611979") return;
-        let awaiting = reaction.message.guild.roles.find("name", "Awaiting Verification [⏰]")
-        let male = reaction.message.guild.roles.find("name", "Male [👦]")
-        let female = reaction.message.guild.roles.find("name", "Female [👧]")
-        let defaultrole = reaction.message.guild.roles.find("name", "Users [⚫]")
+        let awaiting = reaction.message.guild.roles.find("name", "Awaiting Verification [вЏ°]")
+        let male = reaction.message.guild.roles.find("name", "Male [рџ‘¦]")
+        let female = reaction.message.guild.roles.find("name", "Female [рџ‘§]")
+        let defaultrole = reaction.message.guild.roles.find("name", "Users [вљ«]")
 
-    if (reaction.emoji.name === "🚹") {
+    if (reaction.emoji.name === "рџљ№") {
        member.addRole(male.id).then(member.addRole(defaultrole.id))
         member.removeRole(awaiting.id)
   }
@@ -330,12 +330,12 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
         let member = reaction.message.guild.members.get(user.id)
         if (user.bot) return;
         if (reaction.message.channel.id !== "449976083702611979") return;
-        let awaiting = reaction.message.guild.roles.find("name", "Awaiting Verification [⏰]")
-        let male = reaction.message.guild.roles.find("name", "Male [👦]")
-        let female = reaction.message.guild.roles.find("name", "Female [👧]")
-        let defaultrole = reaction.message.guild.roles.find("name", "Users [⚫]")
+        let awaiting = reaction.message.guild.roles.find("name", "Awaiting Verification [вЏ°]")
+        let male = reaction.message.guild.roles.find("name", "Male [рџ‘¦]")
+        let female = reaction.message.guild.roles.find("name", "Female [рџ‘§]")
+        let defaultrole = reaction.message.guild.roles.find("name", "Users [вљ«]")
 
-    if (reaction.emoji.name === "🚺") {
+    if (reaction.emoji.name === "рџљє") {
        member.addRole(female.id).then(member.addRole(defaultrole.id))
         member.removeRole(awaiting.id)
   }
@@ -344,22 +344,22 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
 client.on('message', message => {
   if(message.author.id === "447385216898695179"){
   if(message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
-          message.react("🇩").then(
+          message.react("рџ‡©").then(
             setTimeout(() => {
-                message.react("🇵")
+                message.react("рџ‡µ")
             }, 500)).then(
           setTimeout(() => {
-              message.react("🇬")
+              message.react("рџ‡¬")
           }, 500)).then(
           setTimeout(() => {
-            message.react("🇧")
+            message.react("рџ‡§")
           }, 500))
       }
 }
 });
 
 client.on('messageReactionAdd', (reaction, user) => {
-    if (reaction.emoji.name === "🇩") {
+    if (reaction.emoji.name === "рџ‡©") {
       if(reaction.message.author.id === "447385216898695179"){
         if(reaction.message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
         let member = reaction.message.guild.members.get(user.id)
@@ -368,26 +368,26 @@ client.on('messageReactionAdd', (reaction, user) => {
     let user2 = user.id
 
     let dmdo = reaction.message.guild.roles.find("name", "DIAMOND DONOR")
-    let dns = reaction.message.guild.roles.find("name", "DONORS [💳]")
+    let dns = reaction.message.guild.roles.find("name", "DONORS [рџ’і]")
 
 
-if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
+if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** вћ¤ Deja deИ›ii acest grad.")
 
-db.fetchObject(user.id).then(i => {
+db.fetch(user.id).then(i => {
 if(i.value === "150000" || i.value > "150000"){
 member.addRole(dmdo.id).then(member.addRole(dns.id))
-db.updateValue(user.id, -150000)
-reaction.message.edit('**VM** ➤ Ai primit gradul de `DIAMOND DONOR` și ți-au fost retrase 150000 points.')
+db.set(user.id, -150000)
+reaction.message.edit('**VM** вћ¤ Ai primit gradul de `DIAMOND DONOR` И™i И›i-au fost retrase 150000 points.')
 }
 if(i.value < "150000"){
-  reaction.message.edit('**VM** ➤ Nu ai destule points-uri. ' + i.value + '/150000')
+  reaction.message.edit('**VM** вћ¤ Nu ai destule points-uri. ' + i.value + '/150000')
 }
 })
 }}}
 });
 
 client.on('messageReactionAdd', (reaction, user) => {
-    if (reaction.emoji.name === "🇵") {
+    if (reaction.emoji.name === "рџ‡µ") {
       if(reaction.message.author.id === "447385216898695179"){
         if(reaction.message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
         let member = reaction.message.guild.members.get(user.id)
@@ -396,26 +396,26 @@ client.on('messageReactionAdd', (reaction, user) => {
     let user2 = user.id
 
     let dmdo = reaction.message.guild.roles.find("name", "PLATINUM DONOR")
-    let dns = reaction.message.guild.roles.find("name", "DONORS [💳]")
+    let dns = reaction.message.guild.roles.find("name", "DONORS [рџ’і]")
 
 
-if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
+if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** вћ¤ Deja deИ›ii acest grad.")
 
-db.fetchObject(user.id).then(i => {
+db.fetch(user.id).then(i => {
 if(i.value === "100000" || i.value > "100000"){
 member.addRole(dmdo.id).then(member.addRole(dns.id))
-db.updateValue(user.id, -100000)
-reaction.message.edit('**VM** ➤ Ai primit gradul de `PLATINUM DONOR` și ți-au fost retrase 100000 points.')
+db.set(user.id, -100000)
+reaction.message.edit('**VM** вћ¤ Ai primit gradul de `PLATINUM DONOR` И™i И›i-au fost retrase 100000 points.')
 }
 if(i.value < "100000"){
-  reaction.message.edit('**VM** ➤ Nu ai destule points-uri. ' + i.value + '/100000')
+  reaction.message.edit('**VM** вћ¤ Nu ai destule points-uri. ' + i.value + '/100000')
 }
 })
 }}}
 });
 
 client.on('messageReactionAdd', (reaction, user) => {
-    if (reaction.emoji.name === "🇬") {
+    if (reaction.emoji.name === "рџ‡¬") {
       if(reaction.message.author.id === "447385216898695179"){
         if(reaction.message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
         let member = reaction.message.guild.members.get(user.id)
@@ -424,26 +424,26 @@ client.on('messageReactionAdd', (reaction, user) => {
     let user2 = user.id
 
     let dmdo = reaction.message.guild.roles.find("name", "GOLD DONOR")
-    let dns = reaction.message.guild.roles.find("name", "DONORS [💳]")
+    let dns = reaction.message.guild.roles.find("name", "DONORS [рџ’і]")
 
 
-if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
+if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** вћ¤ Deja deИ›ii acest grad.")
 
-db.fetchObject(user.id).then(i => {
+db.fetch(user.id).then(i => {
 if(i.value === "75000" || i.value > "75000"){
-db.updateValue(user.id, -75000)
+db.set(user.id, -75000)
 member.addRole(dmdo.id).then(member.addRole(dns.id))
-reaction.message.edit('**VM** ➤ Ai primit gradul de `GOLD DONOR` și ți-au fost retrase 75000 points.')
+reaction.message.edit('**VM** вћ¤ Ai primit gradul de `GOLD DONOR` И™i И›i-au fost retrase 75000 points.')
 }
 if(i.value < "75000"){
-  reaction.message.edit('**VM** ➤ Nu ai destule points-uri. ' + i.value + '/75000')
+  reaction.message.edit('**VM** вћ¤ Nu ai destule points-uri. ' + i.value + '/75000')
 }
 })
 }}}
 });
 
 client.on('messageReactionAdd', (reaction, user) => {
-    if (reaction.emoji.name === "🇧") {
+    if (reaction.emoji.name === "рџ‡§") {
       if(reaction.message.author.id === "447385216898695179"){
         if(reaction.message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
         let member = reaction.message.guild.members.get(user.id)
@@ -452,19 +452,19 @@ client.on('messageReactionAdd', (reaction, user) => {
     let user2 = user.id
 
     let dmdo = reaction.message.guild.roles.find("name", "BRONZE DONOR")
-    let dns = reaction.message.guild.roles.find("name", "DONORS [💳]")
+    let dns = reaction.message.guild.roles.find("name", "DONORS [рџ’і]")
 
 
-if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
+if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** вћ¤ Deja deИ›ii acest grad.")
 
-db.fetchObject(user.id).then(i => {
+db.fetch(user.id).then(i => {
 if(i.value === "35000" || i.value > "35000"){
-db.updateValue(user.id, -35000)
+db.set(user.id, -35000)
 member.addRole(dmdo.id).then(member.addRole(dns.id))
-reaction.message.edit('**VM** ➤ Ai primit gradul de `BRONZE DONOR` și ți-au fost retrase 35000 points.')
+reaction.message.edit('**VM** вћ¤ Ai primit gradul de `BRONZE DONOR` И™i И›i-au fost retrase 35000 points.')
 }
 if(i.value < "35000"){
-  reaction.message.edit('**VM** ➤ Nu ai destule points-uri. ' + i.value + '/35000')
+  reaction.message.edit('**VM** вћ¤ Nu ai destule points-uri. ' + i.value + '/35000')
 }
 })
 }}}
@@ -473,21 +473,21 @@ if(i.value < "35000"){
 client.on("message", message => {
 	if(message.content.includes("discord.rip") || message.content.includes("discord.me") || message.content.includes("discord.gg") || message.content.includes("discordapp.com")){
 		message.delete()
-       message.channel.send("**VM** ➤ " + message.author.username + " lasă reclama.")
+       message.channel.send("**VM** вћ¤ " + message.author.username + " lasДѓ reclama.")
 	}
 });
 
 client.on("messageUpdate", (oldMessage, newMessage) => {
 	if(newMessage.content.includes("discord.rip") || newMessage.content.includes("discord.me") || newMessage.content.includes("discord.gg") || newMessage.content.includes("discordapp.com")){
 		newMessage.delete()
-       newMessage.channel.send("**VM** ➤ " + newMessage.author.username + ", lasă reclama.")
+       newMessage.channel.send("**VM** вћ¤ " + newMessage.author.username + ", lasДѓ reclama.")
 	}
 });
 
 client.on("message", message => {
 	if(message.content.includes("youtube.com/c/")){
 		message.delete()
-       message.channel.send("**VM** ➤ " + message.author.username + ", lasăreclama.")		
+       message.channel.send("**VM** вћ¤ " + message.author.username + ", lasДѓreclama.")		
 	}
 });
 
