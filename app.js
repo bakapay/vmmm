@@ -320,10 +320,13 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
         let female = reaction.message.guild.roles.find("name", "Female [👧]")
         let defaultrole = reaction.message.guild.roles.find("name", "Users [⚫]")
 
-    if (reaction.emoji.name === "🚹") {
-       member.addRole(male.id).then(member.addRole(defaultrole.id))
-        member.removeRole(awaiting.id)
-  }
+ const backwardsFilter = (reaction, user) => reaction.emoji.name === "🚺";
+	
+	const backwards = reaction.message.createReactionCollector, { time: 600000 });
+	 backwards.on('collect', r => {
+		 if(user.bot) return;
+		 member.addRole(female.id)
+	 });
 });
 
 client.on('messageReactionAdd', (reaction, user, messageReaction) => {
@@ -335,10 +338,13 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
         let female = reaction.message.guild.roles.find("name", "Female [👧]")
         let defaultrole = reaction.message.guild.roles.find("name", "Users [⚫]")
 
-    if (reaction.emoji.name === "🚺") {
-       member.addRole(female.id).then(member.addRole(defaultrole.id))
-        member.removeRole(awaiting.id)
-  }
+ const backwwardsFilter = (reaction, user) => reaction.emoji.name === "🚹";
+	
+	const backwwards = reaction.message.createReactionCollector, { time: 600000 });
+	 backwwards.on('collect', r => {
+		 if(user.bot) return;
+		 member.addRole(male.id)
+	 });
 });
 
 client.on('message', message => {
@@ -487,7 +493,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
 client.on("message", message => {
 	if(message.content.includes("youtube.com/c/")){
 		message.delete()
-       message.channel.send("**VM** ➤ " + message.author.username + ", lasăreclama.")		
+       message.channel.send("**VM** ➤ " + message.author.username + ", lasă reclama.")		
 	}
 });
 
