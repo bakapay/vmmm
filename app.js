@@ -370,7 +370,7 @@ if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ D
 
 db.fetchObject(user.id).then(i => {
 reaction.remove(user);
-reaction.remove(reaction.message.auhor.id);
+reaction.remove(reaction.message.author.id);
 if(i.value === "150000" || i.value > "150000"){
 member.addRole(dmdo.id).then(member.addRole(dns.id))
 db.updateValue(user.id, -150000)
@@ -400,7 +400,7 @@ if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ D
 
 db.fetchObject(user.id).then(i => {
 reaction.remove(user);
-reaction.remove(reaction.message.auhor.id);
+reaction.remove(reaction.message.author.id);
 if(i.value === "100000" || i.value > "100000"){
 member.addRole(dmdo.id).then(member.addRole(dns.id))
 db.updateValue(user.id, -100000)
@@ -430,7 +430,7 @@ if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ D
 
 db.fetchObject(user.id).then(i => {
 reaction.remove(user);
-reaction.remove(reaction.message.auhor.id);
+reaction.remove(reaction.message.author.id);
 if(i.value === "75000" || i.value > "75000"){
 db.updateValue(user.id, -75000)
 member.addRole(dmdo.id).then(member.addRole(dns.id))
@@ -460,7 +460,7 @@ if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ D
 
 db.fetchObject(user.id).then(i => {
 reaction.remove(user);
-reaction.remove(reaction.message.auhor.id);
+reaction.remove(reaction.message.author.id);
 if(i.value === "35000" || i.value > "35000"){
 db.updateValue(user.id, -35000)
 member.addRole(dmdo.id).then(member.addRole(dns.id))
