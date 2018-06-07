@@ -238,7 +238,7 @@ let role = message.guild.roles.find("name", "@everyone");
 });
 
 client.on("message", message => {
-let role = message.guild.roles.find("name", "@everyone");
+let role = client.guilds.get("447342629198495744").roles.find("name", "@everyone");
        if(message.channel.name.startsWith(`📫-rank-applys-`)){
         if(message.author.id === "447385216898695179"){
       message.channel.overwritePermissions(role, {
@@ -287,7 +287,8 @@ if(channel.parent.id === `453138559872925705`){
 
 
 client.on(`message`, message => {
-  const embed = new Discord.RichEmbed()
+	if(message.channel.type === "dm") return;
+	 const embed = new Discord.RichEmbed()
   .setAuthor("Reclamații | VermillionFamily", client.guilds.get("447342629198495744").iconURL)
   .setDescription(message.content)
   .setFooter("Autorul reclamației - " + message.author.username)
@@ -337,6 +338,7 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
 });
 
 client.on('message', message => {
+	if(message.channel.type === "dm") return;
   if(message.author.id === "447385216898695179"){
   if(message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
           message.react("🇩").then(
@@ -470,6 +472,7 @@ if(i.value < "35000"){
 });
 
 client.on("message", message => {
+	if(message.channel.type === "dm") return;
 	if(message.content.includes("discord.rip") || message.content.includes("discord.me") || message.content.includes("discord.gg") || message.content.includes("discordapp.com")){
 		message.delete()
        message.channel.send("**VM** ➤ " + message.author.username + " lasă reclama.")
@@ -477,6 +480,7 @@ client.on("message", message => {
 });
 
 client.on("messageUpdate", (oldMessage, newMessage) => {
+	if(message.channel.type === "dm") return;
 	if(newMessage.content.includes("discord.rip") || newMessage.content.includes("discord.me") || newMessage.content.includes("discord.gg") || newMessage.content.includes("discordapp.com")){
 		newMessage.delete()
        newMessage.channel.send("**VM** ➤ " + newMessage.author.username + ", lasă reclama.")
@@ -484,6 +488,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
 });
 
 client.on("message", message => {
+	if(message.channel.type === "dm") return;
 	if(message.content.includes("youtube.com/c/")){
 		message.delete()
        message.channel.send("**VM** ➤ " + message.author.username + ", lasă reclama.")		
@@ -491,6 +496,7 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
+	if(message.channel.type === "dm") return;
 if(message.channel.id === "452457724936978442"){
 if(message.content.startsWith("/")){
 message.delete()
