@@ -14,7 +14,7 @@ if (!time) return message.channel.sendEmbed(k)
 message.channel.send("**VM** ➤ Vei primi un memento după " + time + ".")
 
   setTimeout(function() {
-    message.author.send(":alarm_clock: " + reason)
+    message.author.send(":alarm_clock: " + r)
   },ms(time))
   
   
