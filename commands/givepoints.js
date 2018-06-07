@@ -14,8 +14,8 @@ const k = new Discord.RichEmbed()
 if(!member) return message.channel.send(k)
 if(!pointss) return message.channel.send(k)
 
-db.set(member.user.id, +pointss).then(
-db.fetch(member.user.id).then(i => {
+db.updateValue(member.user.id, +pointss).then(
+db.fetchObject(member.user.id).then(i => {
 	message.channel.send("**VM** ➤ `" + member.user.username + "` are acum `" + i.value + "` points.")}))
 
 };
