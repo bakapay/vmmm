@@ -311,7 +311,7 @@ let channel = member.guild.channels.get("449976083702611979")
       message.react("🚺"))
   });
 
-client.on('messageReactionAdd', (reaction, user, messageReaction) => {
+client.on('react', (reaction, user, messageReaction) => {
         let member = reaction.message.guild.members.get(user.id)
         if (user.bot) return;
         if (reaction.message.channel.id !== "449976083702611979") return;
@@ -329,7 +329,7 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
 	 });
 });
 
-client.on('messageReactionAdd', (reaction, user, messageReaction) => {
+client.on('react', (reaction, user) => {
         let member = reaction.message.guild.members.get(user.id)
         if (user.bot) return;
         if (reaction.message.channel.id !== "449976083702611979") return;
