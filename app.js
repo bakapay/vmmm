@@ -322,7 +322,7 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
 
  const backwardsFilter = (reaction, user) => reaction.emoji.name === "🚺";
 	
-	const backwards = reaction.message.createReactionCollector, { time: 600000 });
+	const backwards = reaction.message.createReactionCollector(backwardsFilter, { time: 600000 });
 	 backwards.on('collect', r => {
 		 if(user.bot) return;
 		 member.addRole(female.id)
@@ -340,7 +340,7 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
 
  const backwwardsFilter = (reaction, user) => reaction.emoji.name === "🚹";
 	
-	const backwwards = reaction.message.createReactionCollector, { time: 600000 });
+	const backwwards = reaction.message.createReactionCollector(backwwardsFilter, { time: 600000 });
 	 backwwards.on('collect', r => {
 		 if(user.bot) return;
 		 member.addRole(male.id)
