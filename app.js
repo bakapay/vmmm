@@ -480,7 +480,6 @@ client.on("message", message => {
 });
 
 client.on("messageUpdate", (oldMessage, newMessage) => {
-	if(message.channel.type === "dm") return;
 	if(newMessage.content.includes("discord.rip") || newMessage.content.includes("discord.me") || newMessage.content.includes("discord.gg") || newMessage.content.includes("discordapp.com")){
 		newMessage.delete()
        newMessage.channel.send("**VM** ➤ " + newMessage.author.username + ", lasă reclama.")
