@@ -332,7 +332,7 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
         member.removeRole(awaiting.id)
     }
     else {
-        reaction.remove(user);
+        reaction.remove(user.id);
     }
 });
 
