@@ -369,6 +369,8 @@ client.on('messageReactionAdd', (reaction, user) => {
 if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
 
 db.fetchObject(user.id).then(i => {
+reaction.remove(user);
+reaction.remove(reaction.message.auhor.id);
 if(i.value === "150000" || i.value > "150000"){
 member.addRole(dmdo.id).then(member.addRole(dns.id))
 db.updateValue(user.id, -150000)
@@ -397,6 +399,8 @@ client.on('messageReactionAdd', (reaction, user) => {
 if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
 
 db.fetchObject(user.id).then(i => {
+reaction.remove(user);
+reaction.remove(reaction.message.auhor.id);
 if(i.value === "100000" || i.value > "100000"){
 member.addRole(dmdo.id).then(member.addRole(dns.id))
 db.updateValue(user.id, -100000)
@@ -425,6 +429,8 @@ client.on('messageReactionAdd', (reaction, user) => {
 if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
 
 db.fetchObject(user.id).then(i => {
+reaction.remove(user);
+reaction.remove(reaction.message.auhor.id);
 if(i.value === "75000" || i.value > "75000"){
 db.updateValue(user.id, -75000)
 member.addRole(dmdo.id).then(member.addRole(dns.id))
@@ -453,6 +459,8 @@ client.on('messageReactionAdd', (reaction, user) => {
 if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
 
 db.fetchObject(user.id).then(i => {
+reaction.remove(user);
+reaction.remove(reaction.message.auhor.id);
 if(i.value === "35000" || i.value > "35000"){
 db.updateValue(user.id, -35000)
 member.addRole(dmdo.id).then(member.addRole(dns.id))
