@@ -9,7 +9,7 @@ const k = new Discord.RichEmbed()
 let r = args.slice(1).join(' ');
 if(!r) return message.channel.send(k)
 
-let time = args[1]
+let time = args[0]
 if (!time) return message.channel.sendEmbed(k)
 message.channel.send("**VM** ➤ Vei primi un memento după " + time + ".")
 
