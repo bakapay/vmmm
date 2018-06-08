@@ -133,7 +133,6 @@ let server = member.guild
 let channel = client.channels.get("454630009651331083")
 let bossData = JSON.parse(fs.readFileSync('storage/boss.json', 'utf8'));
 
-
 if(!bossData[server]) bossData[server] = {}
 if(!bossData[server].hp) bossData[server].hp = 3100;
 if(!bossData[server].name) bossData[server].name = member.user.username
