@@ -69,7 +69,7 @@ client.elevation = message => {
 
 client.on('message', message => {
 if(message.author.bot) return;
-db.updateValue(message.author.id, 3)
+db.updateValue(message.author.id, +3)
 });
 
 client.on("guildMemberAdd", member => {
@@ -135,10 +135,10 @@ let bossData = JSON.parse(fs.readFileSync('storage/boss.json', 'utf8'));
 
 
 if(!bossData[server]) bossData[server] = {}
-if(!bossData[server].hp) bossData[server].hp = 11500;
+if(!bossData[server].hp) bossData[server].hp = 3100;
 if(!bossData[server].name) bossData[server].name = member.user.username
 
-bossData[server].hp -= 20;
+bossData[server].hp -= 50;
 if(bossData[server].hp === "0" || bossData[server].hp < 0) return bossData[server].name = member.user.username
 
 channel.setName("😈 " + bossData[server].name + ": " + bossData[server].hp + "HP")
