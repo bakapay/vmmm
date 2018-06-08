@@ -126,6 +126,27 @@ client.on(`roleCreate`, role => {
   role.guild.channels.get("449202099637583872").send(embed)
 });
 
+
+client.on('guildMemberAdd', member => {
+  if(member.bot) return;
+let server = member.guild
+let channel = client.channels.get("454630009651331083")
+let bossData = JSON.parse(fs.readFileSync('storage/boss.json', 'utf8'));
+
+
+if(!bossData[server]) bossData[server] = {}
+if(!bossData[server].hp) bossData[server].hp = 11500;
+if(!bossData[server].name) bossData[server].name = member.user.username
+
+bossData[server].hp -= 20;
+if(bossData[server].hp === "0" || bossData[server].hp < 0) return bossData[server].name = member.user.username
+
+channel.setName("😈 " + bossData[server].name + ": " + bossData[server].hp + "HP")
+
+  fs.writeFile('storage/boss.json', JSON.stringify(bossData), (err) => {
+  if (err) console.error(err);});
+});
+
 client.on(`guildMemberAdd`, (member) => {
 let defaultrole = member.guild.roles.find("name", "Awaiting Verification [⏰]")
 let saferole = member.guild.roles.find("name", "safe-role")
