@@ -4,14 +4,14 @@ const db = require('quick.db')
 exports.run = (client, message, args) => {
 	if(message.channel.id != "450708852858421248") return;
 
-db.fetchObject(message.author.id).then(i => {
+db.updateValue(message.author.id, +3).then(i => {
 let member = message.mentions.members.first();
 if(!member) return message.channel.send("**VM** ➤ În prezent deții " + i.value + " points.")
 })
 
 if(message.mentions.members.first()){
 let member = message.mentions.members.first();
-db.fetchObject(member.user.id).then(i => {
+db.updateValue(member.user.id, +3).then(i => {
 let member = message.mentions.members.first();
 if(!i.value){
 	message.channel.send("**VM** ➤ " + member.user.username + " deține 0 points.")
