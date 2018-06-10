@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 exports.run = function(client, message, args) {
-  if(message.channel.id != "450708852858421248") return;
-
+	
 const k = new Discord.RichEmbed()
 .setAuthor("Comanda executată: /purge", client.user.avatarURL)
 .setDescription("**Descriere:** Stergi mesajele de pe un channel. (limită - 100)\n**Folosire:** /purge [număr]\n**Exemplu:** /purge 45")
