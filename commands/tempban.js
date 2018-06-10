@@ -26,7 +26,7 @@ const k = new Discord.RichEmbed()
 	  
 	   member.send("       **VM** ➤ Ai fost interzis de pe serverul VermillionFamily	     \nPentru unban contactați unul dintre owneri.").then(
         setTimeout(() => {
-          message.guild.members.get(member.user.id).ban(reason)
+          message.guild.ban(member, reason)
         }, 1000))
 		
 	  message.channel.send("**VM** ➤ " + member.user + " a fost interzis de către " + message.author + ".")
