@@ -15,7 +15,7 @@ const log = message => {
 };
 
   client.on(`ready`, member => {
-        client.user.setActivity(`NEW: FRESH OPEN | 2/6/2018`, {
+        client.user.setActivity(`NEW: POKEMONS | 10/6/2018`, {
         type: "Watching"
     });
 });
