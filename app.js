@@ -332,7 +332,7 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
         let member = reaction.message.guild.members.get(user.id)
         if (user.bot) return;
         if (reaction.message.channel.id !== "449976083702611979") return;
-        let awaiting = reaction.message.guild.roles.find("name", "⏰ | Awaiting Verification")
+        let awaiting = reaction.message.guild.roles.find("name", "⏰ | AWAITING VERIFICATION")
         let male = reaction.message.guild.roles.find("name", "👦 | Male")
         let female = reaction.message.guild.roles.find("name", "👧 | Female")
     let defaultrole = reaction.message.guild.roles.find("name", "⚫ | Members")
