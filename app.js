@@ -15,7 +15,7 @@ const log = message => {
 };
 
   client.on(`ready`, member => {
-        client.user.setActivity(`NEW: POKEMONS | 10/6/2018`, {
+        client.user.setActivity(`NEW: WIPE | 15/6/2018`, {
         type: "Watching"
     });
 });
@@ -68,7 +68,7 @@ client.elevation = message => {
 
 client.on("guildMemberAdd", member => {
   member.guild.channels.get("447386660175609857").setName("👤 Newest Member: " + member.user.username)
-	member.guild.members.get(member.user.username).setNickname("👤 " + member.user.username
+	member.guild.members.get(member.user.username).setNickname("👤 " + member.user.username)
   });
 
 client.on(`channelDelete`, channel => {
