@@ -143,7 +143,7 @@ channel.setName("👾 Goal: " + client.guilds.get("447342629198495744").members.
 });
 
 client.on(`guildMemberAdd`, (member) => {
-let defaultrole = member.guild.roles.find("name", "⏰ | Awaiting Verification")
+let defaultrole = member.guild.roles.find("name", "⏰ | AWAITING VERIFICATION")
 let saferole = member.guild.roles.find("name", "safe-role")
 let users = member.guild.roles.find("name", "⚫ | Members")
   const embed = new Discord.RichEmbed()
