@@ -73,16 +73,16 @@ db.updateValue(message.author.id, +3)
 });
 
 client.on("guildMemberAdd", member => {
-  member.guild.channels.get("447386660175609857").setName("👦 Total Members: " + member.guild.members.filter(m => !m.user.bot).size)
+  member.guild.channels.get("447386660175609857").setName("👤 Members: " + member.guild.members.filter(m => !m.user.bot).size)
   });
   
 client.on("guildMemberRemove", member => {
-  member.guild.channels.get("447386660175609857").setName("👦 Total Members: " + member.guild.members.filter(m => !m.user.bot).size)
+  member.guild.channels.get("447386660175609857").setName("👤 Members: " + member.guild.members.filter(m => !m.user.bot).size)
 });
 
 client.on("ready", member => {
   let guild = client.guilds.get("447342629198495744")
-  guild.channels.get("447386660175609857").setName("👦 Total Members: " + guild.members.filter(m => !m.user.bot).size)
+  guild.channels.get("447386660175609857").setName("👤 Members: " + guild.members.filter(m => !m.user.bot).size)
 });
 
 client.on(`channelDelete`, channel => {
@@ -336,10 +336,10 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
         let member = reaction.message.guild.members.get(user.id)
         if (user.bot) return;
         if (reaction.message.channel.id !== "449976083702611979") return;
-        let awaiting = reaction.message.guild.roles.find("name", "Awaiting Verification [⏰]")
-        let male = reaction.message.guild.roles.find("name", "Male [👦]")
-        let female = reaction.message.guild.roles.find("name", "Female [👧]")
-    let defaultrole = reaction.message.guild.roles.find("name", "Users [⚫]")
+        let awaiting = reaction.message.guild.roles.find("name", "⏰ | Awaiting Verification")
+        let male = reaction.message.guild.roles.find("name", "👦 | Male")
+        let female = reaction.message.guild.roles.find("name", "👧 | Female")
+    let defaultrole = reaction.message.guild.roles.find("name", "⚫ | Members")
 
     if (!member.roles.has(awaiting.id)) {
         reaction.remove(user)
@@ -352,143 +352,6 @@ client.on('messageReactionAdd', (reaction, user, messageReaction) => {
         member.addRole(female.id).then(member.addRole(defaultrole.id))
         member.removeRole(awaiting.id)
     }
-    else {
-        reaction.remove(user.id);
-    }
-});
-
-client.on('message', message => {
-	if(message.channel.type === "dm") return;
-  if(message.author.id === "447385216898695179"){
-  if(message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
-          message.react("🇩").then(
-            setTimeout(() => {
-                message.react("🇵")
-            }, 500)).then(
-          setTimeout(() => {
-              message.react("🇬")
-          }, 500)).then(
-          setTimeout(() => {
-            message.react("🇧")
-          }, 500))
-      }
-}
-});
-
-client.on('messageReactionAdd', (reaction, user) => {
-    if (reaction.emoji.name === "🇩") {
-      if(reaction.message.author.id === "447385216898695179"){
-        if(reaction.message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
-        let member = reaction.message.guild.members.get(user.id)
-        if (user.bot) return;
-
-    let user2 = user.id
-
-    let dmdo = reaction.message.guild.roles.find("name", "DIAMOND DONOR")
-    let dns = reaction.message.guild.roles.find("name", "DONORS [💳]")
-
-
-if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
-
-db.fetchObject(user.id).then(i => {
-reaction.remove(user);
-if(i.value === "150000" || i.value > "150000"){
-member.addRole(dmdo.id).then(member.addRole(dns.id))
-db.updateValue(user.id, -150000)
-reaction.message.edit('**VM** ➤ Ai primit gradul de `DIAMOND DONOR` și ți-au fost retrase 150000 points.')
-}
-if(i.value < "150000"){
-  reaction.message.edit('**VM** ➤ Nu ai destule points-uri. ' + i.value + '/150000')
-}
-})
-}}}
-});
-
-client.on('messageReactionAdd', (reaction, user) => {
-    if (reaction.emoji.name === "🇵") {
-      if(reaction.message.author.id === "447385216898695179"){
-        if(reaction.message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
-        let member = reaction.message.guild.members.get(user.id)
-        if (user.bot) return;
-
-    let user2 = user.id
-
-    let dmdo = reaction.message.guild.roles.find("name", "PLATINUM DONOR")
-    let dns = reaction.message.guild.roles.find("name", "DONORS [💳]")
-
-
-if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
-
-db.fetchObject(user.id).then(i => {
-reaction.remove(user);
-if(i.value === "100000" || i.value > "100000"){
-member.addRole(dmdo.id).then(member.addRole(dns.id))
-db.updateValue(user.id, -100000)
-reaction.message.edit('**VM** ➤ Ai primit gradul de `PLATINUM DONOR` și ți-au fost retrase 100000 points.')
-}
-if(i.value < "100000"){
-  reaction.message.edit('**VM** ➤ Nu ai destule points-uri. ' + i.value + '/100000')
-}
-})
-}}}
-});
-
-client.on('messageReactionAdd', (reaction, user) => {
-    if (reaction.emoji.name === "🇬") {
-      if(reaction.message.author.id === "447385216898695179"){
-        if(reaction.message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
-        let member = reaction.message.guild.members.get(user.id)
-        if (user.bot) return;
-
-    let user2 = user.id
-
-    let dmdo = reaction.message.guild.roles.find("name", "GOLD DONOR")
-    let dns = reaction.message.guild.roles.find("name", "DONORS [💳]")
-
-
-if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
-
-db.fetchObject(user.id).then(i => {
-reaction.remove(user);
-if(i.value === "75000" || i.value > "75000"){
-db.updateValue(user.id, -75000)
-member.addRole(dmdo.id).then(member.addRole(dns.id))
-reaction.message.edit('**VM** ➤ Ai primit gradul de `GOLD DONOR` și ți-au fost retrase 75000 points.')
-}
-if(i.value < "75000"){
-  reaction.message.edit('**VM** ➤ Nu ai destule points-uri. ' + i.value + '/75000')
-}
-})
-}}}
-});
-
-client.on('messageReactionAdd', (reaction, user) => {
-    if (reaction.emoji.name === "🇧") {
-      if(reaction.message.author.id === "447385216898695179"){
-        if(reaction.message.content.startsWith("Ai accesat shop-ul serverului VermillionFamily.")){
-        let member = reaction.message.guild.members.get(user.id)
-        if (user.bot) return;
-
-    let user2 = user.id
-
-    let dmdo = reaction.message.guild.roles.find("name", "BRONZE DONOR")
-    let dns = reaction.message.guild.roles.find("name", "DONORS [💳]")
-
-
-if(member.roles.has(dmdo.id)) return reaction.message.channel.send("**VM** ➤ Deja deții acest grad.")
-
-db.fetchObject(user.id).then(i => {
-reaction.remove(user);
-if(i.value === "35000" || i.value > "35000"){
-db.updateValue(user.id, -35000)
-member.addRole(dmdo.id).then(member.addRole(dns.id))
-reaction.message.edit('**VM** ➤ Ai primit gradul de `BRONZE DONOR` și ți-au fost retrase 35000 points.')
-}
-if(i.value < "35000"){
-  reaction.message.edit('**VM** ➤ Nu ai destule points-uri. ' + i.value + '/35000')
-}
-})
-}}}
 });
 
 client.on("message", message => {
