@@ -143,9 +143,9 @@ channel.setName("👾 Goal: " + client.guilds.get("447342629198495744").members.
 });
 
 client.on(`guildMemberAdd`, (member) => {
-let defaultrole = member.guild.roles.find("name", "Awaiting Verification [⏰]")
+let defaultrole = member.guild.roles.find("name", "⏰ | Awaiting Verification")
 let saferole = member.guild.roles.find("name", "safe-role")
-let users = member.guild.roles.find("name", "Users [⚫]")
+let users = member.guild.roles.find("name", "⚫ | Members")
   const embed = new Discord.RichEmbed()
   .setAuthor("Arhivă | VermillionFamily", "https://media.discordapp.net/attachments/449202099637583872/449203559586594816/vm.png")
   .setDescription("**VM** ➤ Utilizatorul `" + member.user.username + "` s-a alăturat serverului.") 
