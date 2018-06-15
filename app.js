@@ -67,7 +67,7 @@ client.elevation = message => {
 };
 
 client.on("guildMemberAdd", member => {
-  member.guild.channels.get("447386660175609857").setName("👤 Newest Member: " + member.user.username)
+  member.guild.channels.get("447386660175609857").setName("👤 New Member: " + member.user.username)
 	member.guild.members.get(member.user.id).setNickname("👤 " + member.user.username)
   });
 
