@@ -67,17 +67,9 @@ client.elevation = message => {
 };
 
 client.on("guildMemberAdd", member => {
-  member.guild.channels.get("447386660175609857").setName("👤 Members: " + member.guild.members.filter(m => !m.user.bot).size)
+  member.guild.channels.get("447386660175609857").setName("👤 Newest Member: " + member.user.username)
+	member.guild.members.get(member.user.username).setNickname("👤 " + member.user.username
   });
-  
-client.on("guildMemberRemove", member => {
-  member.guild.channels.get("447386660175609857").setName("👤 Members: " + member.guild.members.filter(m => !m.user.bot).size)
-});
-
-client.on("ready", member => {
-  let guild = client.guilds.get("447342629198495744")
-  guild.channels.get("447386660175609857").setName("👤 Members: " + guild.members.filter(m => !m.user.bot).size)
-});
 
 client.on(`channelDelete`, channel => {
   const embed = new Discord.RichEmbed()
@@ -122,22 +114,32 @@ client.on(`roleCreate`, role => {
 
 
 client.on('guildMemberAdd', member => {
-  if(member.bot) return;
-let server = member.guild
+let goal = JSON.parse(fs.readFileSync('storage/goal.json', 'utf8'));
 let channel = client.channels.get("454630009651331083")
-let bossData = JSON.parse(fs.readFileSync('storage/boss.json', 'utf8'));
+if (!goal["GOAL"]) goal["GOAL"] = {}
+if (!goal["GOAL"].number) goal["GOAL"].number = 100;
+if(client.guilds.get("447342629198495744").members.filter(m => !m.user.bot).size === goal["GOAL"].number) goal["GOAL"].number += 100;
+channel.setName("👾 Goal: " + member.guild.members.filter(m => !m.user.bot).size + "/" + goal["GOAL"].number)
+});
 
-if(!bossData[server]) bossData[server] = {}
-if(!bossData[server].hp) bossData[server].hp = 3100;
-if(!bossData[server].name) bossData[server].name = member.user.username
+client.on('guildMemberRemove', member => {
+let goal = JSON.parse(fs.readFileSync('storage/goal.json', 'utf8'));
+let channel = client.channels.get("454630009651331083")
+let channel2 = client.channels.get("447386660175609857")
+channel2.setName()
+if (!goal["GOAL"]) goal["GOAL"] = {}
+if (!goal["GOAL"].number) goal["GOAL"].number = 100;
+if(client.guilds.get("447342629198495744").members.filter(m => !m.user.bot).size === goal["GOAL"].number) goal["GOAL"].number += 100;
+channel.setName("👾 Goal: " + member.guild.members.filter(m => !m.user.bot).size + "/" + goal["GOAL"].number)
+});
 
-bossData[server].hp -= 50;
-if(bossData[server].hp === "0" || bossData[server].hp < 0) return bossData[server].name = member.user.username
-
-channel.setName("😈 " + bossData[server].name + ": " + bossData[server].hp + "HP")
-
-  fs.writeFile('storage/boss.json', JSON.stringify(bossData), (err) => {
-  if (err) console.error(err);});
+client.on('ready', ready => {
+let goal = JSON.parse(fs.readFileSync('storage/goal.json', 'utf8'));
+let channel = client.channels.get("454630009651331083")
+if (!goal["GOAL"]) goal["GOAL"] = {}
+if (!goal["GOAL"].number) goal["GOAL"].number = 100;
+if(client.guilds.get("447342629198495744").members.filter(m => !m.user.bot).size === goal["GOAL"].number) goal["GOAL"].number += 100;
+channel.setName("👾 Goal: " + client.guilds.get("").members.filter(m => !m.user.bot).size  + "/" + goal["GOAL"].number)
 });
 
 client.on(`guildMemberAdd`, (member) => {
