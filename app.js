@@ -66,12 +66,6 @@ client.elevation = message => {
   return permlvl;
 };
 
-
-client.on('message', message => {
-if(message.author.bot) return;
-db.updateValue(message.author.id, +3)
-});
-
 client.on("guildMemberAdd", member => {
   member.guild.channels.get("447386660175609857").setName("👤 Members: " + member.guild.members.filter(m => !m.user.bot).size)
   });
