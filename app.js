@@ -129,7 +129,8 @@ let channel2 = client.channels.get("447386660175609857")
 channel2.setName()
 if (!goal["GOAL"]) goal["GOAL"] = {}
 if (!goal["GOAL"].number) goal["GOAL"].number = 100;
-if(client.guilds.get("447342629198495744").members.filter(m => !m.user.bot).size === goal["GOAL"].number) goal["GOAL"].number += 100;
+let mdn = client.guilds.get("447342629198495744").members.filter(m => !m.user.bot).size
+if(mdn === goal["GOAL"].number || mdn > goal["GOAL"].number) goal["GOAL"].number += 100;
 channel.setName("👾 Goal: " + member.guild.members.filter(m => !m.user.bot).size + "/" + goal["GOAL"].number)
 });
 
